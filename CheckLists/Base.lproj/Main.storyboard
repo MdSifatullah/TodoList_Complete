@@ -80,6 +80,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="DoneBtn:" destination="twu-30-JHP" eventType="editingDidEndOnExit" id="x1w-eP-Bh3"/>
+                                                        <outlet property="delegate" destination="twu-30-JHP" id="D4w-o6-7jj"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -98,18 +99,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Item" id="2TM-TH-XZ9">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nXl-T9-Zc5">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="2NR-wX-Yxi">
                             <connections>
-                                <action selector="CancelBtn:" destination="twu-30-JHP" id="neg-Dd-ueA"/>
+                                <action selector="CancelBtn" destination="twu-30-JHP" id="LVk-bI-kGw"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="HrL-1N-xRb">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="HrL-1N-xRb">
                             <connections>
                                 <action selector="DoneBtn:" destination="twu-30-JHP" id="hCA-9k-cOO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneBtn" destination="HrL-1N-xRb" id="WTX-Mp-JF0"/>
                         <outlet property="textField" destination="XGQ-B7-AbM" id="BrC-bR-SwM"/>
                     </connections>
                 </tableViewController>
@@ -125,7 +127,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QVa-HB-TkU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>

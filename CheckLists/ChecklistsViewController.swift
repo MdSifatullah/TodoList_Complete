@@ -7,13 +7,9 @@
 //
 
 import UIKit
+var items = [ChecklistItem]()
 
 class ChecklistsViewController: UITableViewController {
-    
-    var items = [ChecklistItem]()
-    
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +72,7 @@ class ChecklistsViewController: UITableViewController {
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic )
     }
-    @IBAction func AddItemBtn(){
+    func AddItemBtn(){
         
         let newIndex = items.count
         
@@ -86,6 +82,7 @@ class ChecklistsViewController: UITableViewController {
         let indexPath = IndexPath(row: newIndex, section: 0)
         let indexPaths = [indexPath]
         tableView.insertRows(at: indexPaths, with: .automatic)
+        tableView.reloadData()
         
     }
     
