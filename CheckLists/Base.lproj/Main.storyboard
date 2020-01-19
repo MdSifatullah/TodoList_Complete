@@ -15,27 +15,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" rowHeight="61" id="GGJ-M8-zDt">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" rowHeight="61" id="GGJ-M8-zDt">
                                 <rect key="frame" x="0.0" y="28" width="320" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GGJ-M8-zDt" id="S5s-LU-N64">
-                                    <rect key="frame" x="0.0" y="0.0" width="280" height="61"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="261" height="61"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNG-k2-Kll">
+                                            <rect key="frame" x="10" y="0.0" width="25" height="61"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="25" id="BlT-dk-boH"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                            <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlb-UY-Muf">
-                                            <rect key="frame" x="21" y="11" width="42" height="39"/>
+                                            <rect key="frame" x="35" y="0.0" width="42" height="61"/>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Nlb-UY-Muf" firstAttribute="bottom" secondItem="S5s-LU-N64" secondAttribute="bottomMargin" id="6Vu-gV-gXz"/>
-                                        <constraint firstItem="Nlb-UY-Muf" firstAttribute="top" secondItem="S5s-LU-N64" secondAttribute="topMargin" id="955-Ur-KlO"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nlb-UY-Muf" secondAttribute="trailing" constant="20" symbolic="YES" id="Nyx-Oq-LCO"/>
-                                        <constraint firstItem="Nlb-UY-Muf" firstAttribute="leading" secondItem="S5s-LU-N64" secondAttribute="leadingMargin" constant="5" id="btw-hl-zuh"/>
+                                        <constraint firstItem="Nlb-UY-Muf" firstAttribute="leading" secondItem="uNG-k2-Kll" secondAttribute="trailing" id="CiB-eK-dAf"/>
+                                        <constraint firstItem="uNG-k2-Kll" firstAttribute="leading" secondItem="S5s-LU-N64" secondAttribute="leading" constant="10" id="FtN-NY-8jy"/>
+                                        <constraint firstItem="uNG-k2-Kll" firstAttribute="top" secondItem="S5s-LU-N64" secondAttribute="top" id="WuG-7g-EXW"/>
+                                        <constraint firstItem="Nlb-UY-Muf" firstAttribute="top" secondItem="S5s-LU-N64" secondAttribute="top" id="XjN-kT-D1Z"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nlb-UY-Muf" secondAttribute="trailing" constant="20" symbolic="YES" id="mW1-5w-0oo"/>
+                                        <constraint firstAttribute="bottom" secondItem="Nlb-UY-Muf" secondAttribute="bottom" id="njF-NZ-642"/>
+                                        <constraint firstAttribute="bottom" secondItem="uNG-k2-Kll" secondAttribute="bottom" id="rbY-zF-vwv"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="twu-30-JHP" kind="show" identifier="EditItem" trigger="accessoryAction" id="2q2-H3-5r5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -47,14 +62,14 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jRH-YL-oar">
                             <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="twu-30-JHP" kind="show" id="tew-cD-PME"/>
+                                <segue destination="twu-30-JHP" kind="show" identifier="AddItem" id="tew-cD-PME"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAP-Am-Ex2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="786" y="120"/>
+            <point key="canvasLocation" x="785.625" y="119.36619718309859"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="ZZH-Qa-2hw">
@@ -141,4 +156,7 @@
             <point key="canvasLocation" x="37.5" y="120.4225352112676"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2q2-H3-5r5"/>
+    </inferredMetricsTieBreakers>
 </document>
